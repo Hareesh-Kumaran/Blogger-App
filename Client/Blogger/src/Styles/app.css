@@ -1,0 +1,8 @@
+  .selectcustom {
+        width: 200px;
+    
+    }
+  .selectcustom:focus {
+        min-width: 200px;
+        width: auto;
+    }
