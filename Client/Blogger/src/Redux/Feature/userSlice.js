@@ -8,7 +8,7 @@ export const userSlice = createSlice({
   },
   reducers: {
     fetchuserDetails: (state, action) => {
-      console.log("@user reducer ,fetchuserDetails");
+     
     },
   },
 });

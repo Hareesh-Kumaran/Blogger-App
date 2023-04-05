@@ -1,39 +1,41 @@
 import { userModel } from "../../Model/user.model.js";
 import bcrypt from "bcrypt";
 
-
 export const createUserProfile = async (req, res) => {
   try {
-    const dataPassed = req.body;
-    if (!dataPassed.firstname || !dataPassed.lastname || !dataPassed.gender|| !dataPassed.email || !dataPassed.password || !dataPassed.location || !dataPassed.phone ) {
+    if (
+      !req.body.firstname ||
+      !req.body.lastname ||
+      !req.body.gender ||
+      !req.body.email ||
+      !req.body.password ||
+      !req.body.location ||
+      !req.body.phone
+    ) {
       console.log("@Message:", "few data are not found");
       return res.send({
-        success:false,
+        success: false,
         message:
           "insufficient user data , please provide all the required data",
       });
-     
     }
-   
-   
-    const { email } = dataPassed;
+
+    const { email } = req.body;
     const isUserExist = await userModel.findOne({ email });
 
     if (isUserExist) {
       console.log("@Message:", "user email seems to be present already");
-      res.send({ success:false, message: "User Email already Exists" });
+      res.send({ success: false, message: "User Email already Exists" });
       return;
     }
 
-    if(!dataPassed.password)
-     return res.send("Password not passed");
-    const hashedPassword = await bcrypt.hash(dataPassed.password, 10);
-    const { password, ...rest } = dataPassed;
-    //   console.log(rest)
+    if (!req.body.password) return res.send("Password not passed");
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const { password, ...rest } = req.body;
 
     const userInstance = new userModel({ ...rest, password: hashedPassword });
     await userInstance.save();
-    res.send({ success:true,message: "User Saved :)" });
+    res.send({ success: true, message: "User Saved :)" });
   } catch (error) {
     console.log("Try catch error", error);
   }
@@ -84,17 +86,16 @@ export const updateUserProfileByID = async (req, res) => {
 
 export const deleteUserById = async (req, res) => {
   try {
-    const{id}=req.params;
-    if(!id)
-    {
+    const { id } = req.params;
+    if (!id) {
       console.log("@Message:id is not found");
-       res.send("Id is not passed");
-       return;
+      res.send("Id is not passed");
+      return;
     }
 
-   await userModel.findByIdAndDelete(id);
-   res.send({message:"Profile Deleted"});    
+    await userModel.findByIdAndDelete(id);
+    res.send({ message: "Profile Deleted" });
   } catch (error) {
-     console.log("Try catch error", error);
+    console.log("Try catch error", error);
   }
 };

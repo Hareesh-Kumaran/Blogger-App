@@ -1,6 +1,15 @@
-import {Form} from "react-bootstrap";
-import countryData from "../utils/Country_data";
+import { Form } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import getCountrylist from "../utils/Country_data";
+
 function CountryList() {
+  
+  const [countryData, setCountryData] = useState([]);
+
+  useEffect(() => {
+    getCountrylist().then((data) => setCountryData([...data]));
+  }, []);
+
   return (
     <Form.Select
       aria-label="Default select example"
@@ -12,10 +21,10 @@ function CountryList() {
         return (
           <option
             style={{ color: "red", width: "20%" }}
-            value={item}
+            value={item.country}
             key={index}
           >
-            {item}
+            {item.country}
           </option>
         );
       })}
