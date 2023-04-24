@@ -2,6 +2,8 @@ import aws from 'aws-sdk';
 import multer from 'multer';
 import multerS3 from 'multer-s3';
 import { v4 as uuid} from 'uuid';
+import * as dotenv from "dotenv";
+dotenv.config();
 
 const s3 = new aws.S3({
   accessKeyId: process.env.S3_accessKey,
