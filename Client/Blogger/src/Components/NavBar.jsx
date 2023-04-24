@@ -28,47 +28,7 @@ function NavigationBar() {
   };
 
   return (
-    // <Navbar expand="md">
-    //   <Container>
-    //     <NavLink to={"/"} style={{ textDecoration: "none" }}>
-    //       <Navbar.Brand>Logo incoming</Navbar.Brand>
-    //     </NavLink>
-
-    //     <Navbar.Toggle aria-controls="navbarScroll" />
-
-    //     <Navbar.Collapse>
-    //       <Nav className="me-auto" style={navPostion}>
-    //         {/* <CountryList /> */}
-    //         <button>media</button>
-    //         {cookie.Blogging_Token && (
-    //           <NavLink style={{ textDecoration: "none" }} to={"/blog/create"}>
-    //             Create Blog
-    //           </NavLink>
-    //         )}
-
-    //           <a href="#footer">Contact us</a>
-
-    //       </Nav>
-    //       {cookie.Blogging_Token ? (
-    //         <button
-    //           className="logoutBtn"
-    //           onClick={() => {
-    //             logoutFunction();
-    //           }}
-    //         >
-    //           logout
-    //         </button>
-    //       ) : (
-    //         <button
-    //           style={{ border: "none" }}
-    //           onClick={() => navigate("/auth")}
-    //         >
-    //           Register/Login
-    //         </button>
-    //       )}
-    //     </Navbar.Collapse>
-    //   </Container>
-    // </Navbar>
+   
 
     <nav className="navigation-wrapper">
       <div className="logo-wrapper">
