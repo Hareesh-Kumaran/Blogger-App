@@ -15,19 +15,20 @@ export const createNewPost = (req, res) => {
       });
     }
 
-    const { title, category, description, owner } = req.body;
+    const { title, category, description, owner,location } = req.body;
 
     let blog = {
       title,
       category,
       description,
       owner,
+      location,
       media: req.file.location,
     };
 
     const blogInstance = new blogModel(blog);
     await blogInstance.save();
-    res.send({ message: "blog saved :)" });
+    res.send({ message: "blog saved :)" ,success:true});
   });
 };
 
@@ -55,6 +56,29 @@ export const getPostByID = async (req, res) => {
   }
 };
 
+export const getAllPostsByLocation = async (req, res) => {
+  try {
+    const { location } = req.params;
+    if (!location) {
+      console.log("@Message:location is not passed in the post");
+      res.send({ message: "location isn't passed", isFound: false });
+      return;
+    }
+
+    const postList = await blogModel.find({ location });
+    if (postList.length === 0) {
+      return res.send({
+        message: `No Post found in region ${location} `,
+        isFound: false,
+      });
+    }
+
+    res.send({ blogList: postList, isFound: true });
+  } catch (error) {
+    console.log("Try catch error", error);
+  }
+};
+
 export const deletePostByID = async (req, res) => {
   try {
     const { id } = req.params;
@@ -64,14 +88,14 @@ export const deletePostByID = async (req, res) => {
     }
 
     await blogModel.findByIdAndDelete(id);
-    res.send({ message: "post deleted" });
+    res.send({ message: "post deleted" ,success:true});
   } catch (error) {
     console.log("Try catch error", error);
   }
 };
 
 export const updateBlogByID = (req, res) => {
-  const { id } = req.params;
+
 
   try {
     const { id } = req.params;
@@ -95,15 +119,13 @@ export const updateBlogByID = (req, res) => {
       }
 
       let updateObj = { ...req.body };
-      console.log(updateObj);
+      console.log('@update data',updateObj);
       if (req.file) {
         updateObj = { ...updateObj, media: req.file.location };
       }
 
-      console.log("@update", updateObj);
-
       await blogModel.findByIdAndUpdate(id, updateObj);
-      res.send({ message: "Updated" });
+      res.send({ message: "Updated",success:true });
     });
   } catch (error) {
     console.log("Try catch error", error);

@@ -1,23 +1,42 @@
-import { createSlice } from '@reduxjs/toolkit' 
+import { createSlice } from "@reduxjs/toolkit";
 
-export const BlogSlice=createSlice({
-    name:'blog',
-    initialState:{
-        listOfBlogs:[],
-        isMediaSelected:false,
-        location:"",//if nothing is selcted just show all blog 
-
+export const BlogSlice = createSlice({
+  name: "blog",
+  initialState: {
+    blogList: [],
+    isMediaSelected: false,
+    searchList: [],
+    location: "none",
+    searchValue: "",
+  },
+  reducers: {
+    fetchBlog: (state, action) => {
+      console.log("fetch blog called");
     },
-    reducers:{
-        fetchBlog:(state,action)=>{
-
-        },
-        editBlog:(state,action)=>{
-
-        },
-
-    }
+    addToBlogList: (state, action) => {
+      console.log("add to blogList", action.payload);
+      state.blogList = [...action.payload];
+    },
+    setLocation: (state, action) => {
+      console.log("@setlocation action", action.payload);
+      state.location = action.payload;
+    },
+    setSearchValue: (state, action) => {
+      state.searchValue = action.payload;
+    },
+    setSearchList: (state, action) => {
+      state.searchList = action.payload;
+    },
+    toggleMediaOption: (state, action) => {},
+  },
 });
 
-export const{fetchBlog,editBlog}=BlogSlice.actions;
+export const {
+  fetchBlog,
+  setLocation,
+  addToBlogList,
+  setSearchValue,
+  setSearchList,
+  updateBlog
+} = BlogSlice.actions;
 export default BlogSlice.reducer;

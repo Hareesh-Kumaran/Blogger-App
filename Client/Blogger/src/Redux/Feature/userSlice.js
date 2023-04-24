@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 export const userSlice = createSlice({
   name: "user",
@@ -8,10 +9,27 @@ export const userSlice = createSlice({
   },
   reducers: {
     fetchuserDetails: (state, action) => {
-     
+      console.log("@user reducer ,fetchuserDetails", action.payload);
     },
+
+    fetchUserSuccesful: (state, action) => {
+      if (!action.payload) {
+        return;
+      }
+      console.log("@fetchUserSuccesful", action.payload);
+      state.userDetails = action.payload;
+      state.isLoggedIn = true;
+    },
+    
+    resetUserState: (state) => {
+      console.log("resetCalled");
+      state.userDetails = {};
+      state.isLoggedIn = false;
+    },
+  
   },
 });
 
-export const { fetchuserDetails } = userSlice.actions;
+export const { fetchuserDetails, fetchUserSuccesful, resetUserState } =
+  userSlice.actions;
 export default userSlice.reducer;

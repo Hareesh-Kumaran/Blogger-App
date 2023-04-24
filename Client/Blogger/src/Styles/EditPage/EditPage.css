@@ -1,0 +1,185 @@
+.edit-main-wrapper {
+  width: 100%;
+}
+.edit-main-wrapper .title {
+  color: transparent;
+  background-image: linear-gradient(45deg, rgb(64, 183, 227), rgb(246, 57, 88), rgb(245, 245, 127));
+  -webkit-background-clip: text;
+  font-size: 2vw;
+}
+@media (max-width: 500px) {
+  .edit-main-wrapper .title {
+    font-size: 4vw;
+  }
+}
+.edit-main-wrapper .input-field-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 0;
+}
+.edit-main-wrapper .input-field-wrapper label {
+  font-size: 1.25vw;
+}
+.edit-main-wrapper .input-field-wrapper input {
+  font-size: 1vw;
+  color: rgb(65, 65, 65);
+  width: 100%;
+  height: 30px;
+  padding: 1.5% 1%;
+  border-radius: 10px;
+  border: 2px solid rgb(177, 177, 177);
+}
+.edit-main-wrapper .input-field-wrapper input:hover {
+  border: 2px solid rgb(255, 225, 170);
+}
+@media (max-width: 500px) {
+  .edit-main-wrapper .input-field-wrapper {
+    margin: 2% 0;
+  }
+  .edit-main-wrapper .input-field-wrapper label {
+    font-size: 2.5vw;
+  }
+  .edit-main-wrapper .input-field-wrapper input {
+    font-size: 2vw;
+  }
+}
+.edit-main-wrapper .textarea-field-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 0;
+}
+.edit-main-wrapper .textarea-field-wrapper label {
+  font-size: 1.5vw;
+}
+.edit-main-wrapper .textarea-field-wrapper textarea {
+  font-size: 1vw;
+  color: rgb(65, 65, 65);
+  width: 100%;
+  height: 200px;
+  padding: 1.5% 1%;
+  border-radius: 10px;
+  border: 2px solid rgb(177, 177, 177);
+}
+.edit-main-wrapper .textarea-field-wrapper textarea:hover {
+  border: 2px solid rgb(255, 225, 170);
+}
+@media (max-width: 600px) {
+  .edit-main-wrapper .textarea-field-wrapper textarea {
+    font-size: 1.5vw;
+  }
+}
+@media (max-width: 500px) {
+  .edit-main-wrapper .textarea-field-wrapper {
+    margin: 2% 0;
+  }
+  .edit-main-wrapper .textarea-field-wrapper label {
+    font-size: 2.5vw;
+  }
+  .edit-main-wrapper .textarea-field-wrapper textarea {
+    font-size: 2vw;
+  }
+}
+.edit-main-wrapper .dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 0;
+}
+.edit-main-wrapper .dropdown-wrapper label {
+  font-size: 1.5vw;
+}
+.edit-main-wrapper .dropdown-wrapper select {
+  font-size: 1vw;
+  color: rgb(65, 65, 65);
+  width: 100%;
+  padding: 1%;
+  border-radius: 10px;
+  border: 2px solid rgb(177, 177, 177);
+}
+.edit-main-wrapper .dropdown-wrapper select:hover {
+  border: 2px solid rgb(255, 225, 170);
+}
+@media (max-width: 500px) {
+  .edit-main-wrapper .dropdown-wrapper {
+    margin: 2% 0;
+  }
+  .edit-main-wrapper .dropdown-wrapper label {
+    font-size: 2.5vw;
+  }
+  .edit-main-wrapper .dropdown-wrapper select,
+  .edit-main-wrapper .dropdown-wrapper option {
+    font-size: 2vw;
+  }
+}
+.edit-main-wrapper .edit-blog-mediacontainer {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(237, 237, 237);
+  border-radius: 20px;
+  padding: 1% 0;
+}
+@media (max-width: 750px) {
+  .edit-main-wrapper .edit-blog-mediacontainer {
+    height: 250px;
+  }
+}
+@media (max-width: 500px) {
+  .edit-main-wrapper .edit-blog-mediacontainer {
+    height: 150px;
+  }
+}
+.edit-main-wrapper .file-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 0;
+}
+.edit-main-wrapper .file-input-wrapper label {
+  font-size: 1.25vw;
+}
+.edit-main-wrapper .file-input-wrapper input {
+  font-size: 1vw;
+  color: rgb(65, 65, 65);
+  padding: 1% 0;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .edit-main-wrapper .file-input-wrapper {
+    margin: 5% 0;
+  }
+  .edit-main-wrapper .file-input-wrapper label {
+    font-size: 2.5vw;
+  }
+  .edit-main-wrapper .file-input-wrapper input {
+    font-size: 2vw;
+  }
+}
+.edit-main-wrapper .edit-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 2% 0%;
+}
+.edit-main-wrapper .edit-button-container button {
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(254, 159, 86);
+  padding: 0.75% 1%;
+  font-size: 1.25vw;
+}
+.edit-main-wrapper .edit-button-container button:hover {
+  color: rgb(254, 159, 86);
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 1s;
+}
+@media (max-width: 500px) {
+  .edit-main-wrapper .edit-button-container button {
+    font-size: 2vw;
+    padding: 1% 1.5%;
+  }
+}/*# sourceMappingURL=EditPage.css.map */

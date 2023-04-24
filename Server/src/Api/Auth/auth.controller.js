@@ -2,6 +2,7 @@ import { userModel } from "../../Model/user.model.js";
 import { createToken, verifyToken } from "../../Jwt/jwt.js";
 import bcrypt from "bcrypt";
 import { verify } from "jsonwebtoken";
+
 export const loginLogic = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -26,7 +27,12 @@ export const loginLogic = async (req, res) => {
 
     const token = createToken({ id: user._id });
 
-    res.send({ isUserValid: true, message: "Credentials matching", token });
+    res.send({
+      isUserValid: true,
+      message: "Credentials matching",
+      token,
+      userID: user._id,
+    });
   } catch (error) {
     console.log("Try catch error", error);
     res.send({ message: "oops something went wrong" });

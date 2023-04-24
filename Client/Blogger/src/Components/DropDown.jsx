@@ -1,9 +1,11 @@
-import { Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import getCountrylist from "../utils/Country_data";
+import { setLocation } from "../Redux/Feature/BlogSlice";
+import { useDispatch } from "react-redux";
 
 function CountryList() {
   
+  const dispatch=useDispatch();
   const [countryData, setCountryData] = useState([]);
 
   useEffect(() => {
@@ -11,24 +13,22 @@ function CountryList() {
   }, []);
 
   return (
-    <Form.Select
-      aria-label="Default select example"
-      // size="sm"
-      className="selectcustom"
-    >
-      <option>Select Location</option>
-      {countryData.map((item, index) => {
-        return (
-          <option
-            style={{ color: "red", width: "20%" }}
-            value={item.country}
-            key={index}
-          >
-            {item.country}
-          </option>
-        );
-      })}
-    </Form.Select>
+    <div className="select-container">
+      <label>Filter by country</label>
+      <select title="Country"
+        className="selectcustom"
+        onChange={(e) => dispatch(setLocation(e.target.value))}
+      >
+        <option value="none">All</option>
+        {countryData.map((item, index) => {
+          return (
+            <option value={item.country} key={index}>
+              {item.country}
+            </option>
+          );
+        })}
+      </select>
+    </div>
   );
 }
 
