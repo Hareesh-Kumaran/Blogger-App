@@ -1,0 +1,68 @@
+.login-form-main-wrapper {
+  width: 100%;
+}
+.login-form-main-wrapper .input-field-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 0;
+}
+.login-form-main-wrapper .input-field-wrapper label {
+  font-size: 1.25vw;
+}
+.login-form-main-wrapper .input-field-wrapper input {
+  font-size: 1vw;
+  color: rgb(65, 65, 65);
+  width: 100%;
+  height: 30px;
+  padding: 1.5% 1%;
+  border-radius: 10px;
+  border: 2px solid rgb(177, 177, 177);
+}
+.login-form-main-wrapper .input-field-wrapper input:hover {
+  border: 2px solid rgb(255, 225, 170);
+}
+@media (max-width: 800px) {
+  .login-form-main-wrapper .input-field-wrapper {
+    margin: 2% 0;
+  }
+  .login-form-main-wrapper .input-field-wrapper label {
+    font-size: 2vw;
+  }
+  .login-form-main-wrapper .input-field-wrapper input {
+    font-size: 1.5vw;
+  }
+}
+@media (max-width: 500px) {
+  .login-form-main-wrapper .input-field-wrapper {
+    margin: 2% 0;
+  }
+  .login-form-main-wrapper .input-field-wrapper label {
+    font-size: 3vw;
+  }
+  .login-form-main-wrapper .input-field-wrapper input {
+    font-size: 2.5vw;
+  }
+}
+.login-form-main-wrapper .button-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1% 0;
+}
+.login-form-main-wrapper .button-container button {
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background: #ff5f6d;
+  background: linear-gradient(to right, #ffc371, #ff5f6d);
+  padding: 1%;
+}
+.login-form-main-wrapper .button-container button:hover {
+  color: rgb(247, 173, 37);
+  background-color: rgb(255, 255, 255);
+  background-image: none;
+  cursor: pointer;
+  transition: 2s;
+}/*# sourceMappingURL=LoginForm.css.map */

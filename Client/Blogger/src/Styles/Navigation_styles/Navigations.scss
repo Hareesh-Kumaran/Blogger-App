@@ -1,7 +1,6 @@
 @import "../Constants/constants.scss";
 
 .navigation-wrapper {
-
   width: 100%;
   margin: 1% 0 2% 0;
   height: 50px;
@@ -9,13 +8,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 2% 0;
-   border-radius:5px;
-  box-shadow: rgba(158, 158, 158, 0.348) 0px 7px 29px 0px;
+  border-radius: 5px;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   &:hover {
     transition: 2s;
     box-shadow: rgba(255, 219, 178, 0.348) 0px 7px 29px 0px;
   }
- 
 }
 .nav-btn {
   @include primary-button;

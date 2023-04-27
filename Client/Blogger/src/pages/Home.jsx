@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useCookies } from "react-cookie";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchuserDetails } from "../Redux/Feature/userSlice";
@@ -7,18 +7,26 @@ import WelcomeBanner from "../Components/WelcomeBanner";
 import Mime from "mime";
 import BlogCard from "../Components/BlogCard";
 import CountryList from "../Components/DropDown";
-import '../Styles/HomePage/HomePage.css';
+import "../Styles/HomePage/HomePage.css";
+import Pagination from "../Components/Pagination";
 
 export default function HomePage() {
   const [cookie, setCookie] = useCookies(["Blogging_Token"]);
   const { isLoggedIn } = useSelector((state) => state.user);
   const { blogList, searchList } = useSelector((state) => state.blog);
-  
   const dispatch = useDispatch();
 
+  //paginations
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(8);
+
+
+  const lastIndex = currentPage * postPerPage;
+  const firstIndex = lastIndex - postPerPage;
+
   useEffect(() => {
-    if (cookie.Blogging_Token && !isLoggedIn ) {
-      console.log('@cookie',document.cookie[0]);
+    if (cookie.Blogging_Token && !isLoggedIn) {
+      console.log("@cookie", document.cookie[0]);
       const ID = localStorage.getItem("Blogging_UserID");
       dispatch(fetchuserDetails(ID));
     }
@@ -30,9 +38,11 @@ export default function HomePage() {
     return Mime.getType(src);
   }
 
-  function renderBlogCard(list)
-  {
-    return list.map((blog) => (
+  const renderBlogCard = (list) => {
+    const curentPostsList = list.slice(firstIndex, lastIndex);
+    console.log("renderCalled");
+
+    return curentPostsList.map((blog) => (
       <BlogCard
         ID={blog._id}
         mediaType={findMediaType(blog.media)}
@@ -43,7 +53,12 @@ export default function HomePage() {
         owner={blog.owner}
       />
     ));
-  }
+  };
+
+  const totalPosts = useMemo(() => {
+    if (searchList.length) return searchList.length;
+    else return blogList.length;
+  }, [searchList, blogList]);
 
   return (
     <>
@@ -57,7 +72,6 @@ export default function HomePage() {
             onChange={(e) => dispatch(setSearchValue(e.target.value))}
           />
         </div>
-
         <CountryList />
       </div>
       <div className="blog-list-wrapper-container">
@@ -68,6 +82,7 @@ export default function HomePage() {
           {renderBlogCard(searchList.length ? searchList : blogList)}
         </div>
       </div>
+      <Pagination totalPosts={totalPosts} postPerPage={postPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
     </>
   );
 }

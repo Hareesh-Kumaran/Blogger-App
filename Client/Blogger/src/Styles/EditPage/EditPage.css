@@ -49,7 +49,7 @@
   margin: 1% 0;
 }
 .edit-main-wrapper .textarea-field-wrapper label {
-  font-size: 1.5vw;
+  font-size: 1.25vw;
 }
 .edit-main-wrapper .textarea-field-wrapper textarea {
   font-size: 1vw;
@@ -85,7 +85,7 @@
   margin: 1% 0;
 }
 .edit-main-wrapper .dropdown-wrapper label {
-  font-size: 1.5vw;
+  font-size: 1.25vw;
 }
 .edit-main-wrapper .dropdown-wrapper select {
   font-size: 1vw;
@@ -143,16 +143,14 @@
   padding: 1% 0;
   width: 100%;
 }
-@media (max-width: 500px) {
-  .edit-main-wrapper .file-input-wrapper {
-    margin: 5% 0;
-  }
-  .edit-main-wrapper .file-input-wrapper label {
-    font-size: 2.5vw;
-  }
-  .edit-main-wrapper .file-input-wrapper input {
-    font-size: 2vw;
-  }
+.edit-main-wrapper .file-input-wrapper input::-webkit-file-upload-button {
+  margin-right: 20px;
+  border: none;
+  background: #ffa36b;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
 }
 .edit-main-wrapper .edit-button-container {
   display: flex;

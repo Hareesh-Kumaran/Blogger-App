@@ -1,3 +1,4 @@
+import "../Styles/FormPage/registerForm.css";
 import { Form } from "react-bootstrap";
 import { useReducer, useEffect, useState } from "react";
 import axios from "axios";
@@ -53,32 +54,32 @@ function RegisterForm() {
   };
 
   return (
-    <Form>
-      <Form.Group className="mb-3">
-        <Form.Label>Firstname</Form.Label>
-        <Form.Control
+    <div className="register-form-main-wrapper">
+      <div className="input-field-wrapper">
+        <label>Firstname</label>
+        <input
           placeholder="Enter First Name"
           value={state.firstname}
           onChange={(e) => {
             dispatch({ type: "firstname", value: e.target.value });
           }}
         />
-      </Form.Group>
+      </div>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Lastname</Form.Label>
-        <Form.Control
+      <div className="input-field-wrapper">
+        <label>Lastname</label>
+        <input
           placeholder="Enter Second Name"
           value={state.lastname}
           onChange={(e) => {
             dispatch({ type: "lastname", value: e.target.value });
           }}
         />
-      </Form.Group>
+      </div>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Gender</Form.Label>
-        <Form.Select
+      <div className="dropdown-wrapper">
+        <label>Gender</label>
+        <select
           aria-label="Default select example"
           onChange={(e) => {
             dispatch({ type: "gender", value: e.target.value });
@@ -87,12 +88,12 @@ function RegisterForm() {
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Other">Others</option>
-        </Form.Select>
-      </Form.Group>
+        </select>
+      </div>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Email</Form.Label>
-        <Form.Control
+      <div className="input-field-wrapper">
+        <label>Email</label>
+        <input
           type="email"
           placeholder="Enter email"
           value={state.email}
@@ -100,11 +101,11 @@ function RegisterForm() {
             dispatch({ type: "email", value: e.target.value });
           }}
         />
-      </Form.Group>
+      </div>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
+      <div className="input-field-wrapper">
+        <label>Password</label>
+        <input
           type="password"
           placeholder="Password"
           value={state.password}
@@ -112,11 +113,11 @@ function RegisterForm() {
             dispatch({ type: "password", value: e.target.value });
           }}
         />
-      </Form.Group>
+      </div>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Location</Form.Label>
-        <Form.Select
+      <div className="dropdown-wrapper">
+        <label>Location</label>
+        <select
           aria-label="Default select example"
           style={{ width: "200px" }}
           size="sm"
@@ -132,12 +133,12 @@ function RegisterForm() {
               </option>
             );
           })}
-        </Form.Select>
-      </Form.Group>
+        </select>
+      </div>
 
-      <Form.Group className="mb-3">
-        <Form.Label>Phone</Form.Label>
-        <Form.Control
+      <div className="input-field-wrapper">
+        <label>Phone</label>
+        <input
           type="text"
           placeholder="Enter Phone Number"
           value={state.phone}
@@ -145,10 +146,12 @@ function RegisterForm() {
             dispatch({ type: "phone", value: e.target.value });
           }}
         />
-      </Form.Group>
+      </div>
 
-      <button onClick={(e) => registerUser(e)}>Register</button>
-    </Form>
+      <div className="button-container">
+        <button onClick={(e) => registerUser(e)}>Register</button>
+      </div>
+    </div>
   );
 }
 

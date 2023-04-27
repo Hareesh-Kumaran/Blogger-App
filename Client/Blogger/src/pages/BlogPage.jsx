@@ -111,19 +111,23 @@ export default function BlogPage() {
           <button onClick={() => navigate(`/blog/edit/${blog._id}`)}>
             Edit
           </button>
-          <button onClick={() => setDeleteModal(true)}>Delete</button>
+          <button onClick={() => setDeleteModal(!deleteModal)}>Delete</button>
         </div>
       )}
-    
+
       <Modal
-        size="sm"
         show={deleteModal}
         onHide={() => setDeleteModal(false)}
         centered
+        className="modal-body-wrapper"
       >
-        <Modal.Header closeButton>Sure ?</Modal.Header>
-        <Modal.Body> Do you really Want to delete this blog</Modal.Body>
-        <Modal.Footer>
+        <Modal.Header className="modal-header" closeButton>
+          Sure !
+        </Modal.Header>
+        <Modal.Body className="modal-content">
+          Do you really want to delete this blog ?
+        </Modal.Body>
+        <Modal.Footer className="modal-footer">
           <button onClick={deleteBlog}>Delete</button>
         </Modal.Footer>
       </Modal>

@@ -1,6 +1,7 @@
 @import "../Constants/constants.scss";
 
 .blog-page-main-wrapper {
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -13,6 +14,23 @@
   }
 }
 
+.modal-body-wrapper {
+  .modal-header {
+    font-size: 1vw;
+    color: rgb(253, 67, 0);
+  }
+  .modal-content {
+    font-size: 1vw;
+    color: rgb(111, 111, 111);
+  }
+  .modal-footer {
+    button {
+      @include primary-button;
+      padding: 1%;
+    }
+  }
+}
+
 .blog-page-left-wrapper {
   display: flex;
   justify-content: center;
@@ -22,7 +40,8 @@
 
   .media-style {
     height: 75vh;
-    width: 90%;
+    width: 95%;
+    object-fit: contain;
   }
 
   @media (max-width: 900px) {
@@ -125,10 +144,12 @@
   display: flex;
   justify-content: center;
   gap: 10%;
-  margin: 3%;
+  margin-top: 5%;
   padding: 1%;
-  box-shadow: rgba(17, 12, 46, 0.184) 0px 48px 100px 0px;
-  border-radius: 10px;
+
+  box-shadow: rgba(50, 50, 93, 0.051) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.037) 0px 1px 3px -1px;
+  // border-radius: 10px;
 
   button {
     @include secondary-button;

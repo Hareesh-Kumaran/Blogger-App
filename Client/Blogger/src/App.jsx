@@ -12,9 +12,9 @@ import CreateBlog from "./pages/CreateBlog";
 import EditBlogPage from "./pages/EditBlogPage";
 import "react-toastify/dist/ReactToastify.css";
 
-//style
+
 import "./Styles/app.css";
-// import Footer from "./Components/Footer";
+import Footer from "./Components/Footer";
 function App() {
   return (
     <Provider store={reduxStore}>
@@ -25,14 +25,13 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/auth" element={<FormPage />} />
-
             <Route path="/blog">
               <Route path="/blog/:id" element={<BlogPage />} />
               <Route path="/blog/create" element={<CreateBlog />} />
               <Route path="/blog/edit/:id" element={<EditBlogPage />} />
             </Route>
           </Routes>
-          {/* <Footer /> */}
+          <Footer/>
         </Container>
       </BrowserRouter>
     </Provider>

@@ -1,0 +1,82 @@
+@import "../Constants/constants.scss";
+.footer {
+  padding: 3% 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 5%;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      rgba(247, 228, 228, 0.26) 14px
+    ),
+    repeating-linear-gradient(
+      rgba(255, 255, 254, 0.65),
+      rgba(255, 255, 254, 0.65)
+    );
+  background-color: rgba(247, 228, 228, 0.26);
+
+  .contact-form-wrapper {
+    width: 50%;
+    // background-color: aliceblue;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      gap: 10px;
+      label {
+        font-size: 1.25vw;
+        color: rgb(108, 108, 108);
+      }
+      textarea {
+        padding: 1.5% 1%;
+        color: rgb(160, 160, 160);
+        width: 50%;
+        max-height: 100px;
+        background-color: rgba(252, 252, 252, 0.86);
+        border-radius: 10px;
+        border: 2px solid rgb(177, 177, 177);
+        &:hover {
+          border: 2px solid rgb(255, 225, 170);
+        }
+      }
+      button {
+        @include primary-button;
+        padding: 1% 3%;
+      }
+    }
+  }
+
+  .social-media-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    //   background-color: aliceblue;
+    u {
+      font-size: 1.25vw;
+      color: rgb(120, 120, 120);
+    }
+    .media-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10%;
+      svg {
+        height: 25px;
+        width: 15px;
+        color: rgb(251, 145, 84);
+      }
+      span {
+        font-size: 1vw;
+        color: rgb(251, 145, 84);
+      }
+    }
+  }
+}

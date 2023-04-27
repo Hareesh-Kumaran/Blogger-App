@@ -1,3 +1,4 @@
+import "../Styles/CreateBlog/createblog.css";
 import { useState, useEffect, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -76,76 +77,74 @@ function CreateBlog() {
   };
 
   return (
-    <>
-      <h2 className="title">Create Your Blog</h2>
-      <Form>
-        <Form.Group className="mb-3">
-          <Form.Label>Title</Form.Label>
-          <Form.Control
-            placeholder="Enter Title"
-            onChange={(e) => dispatch({ type: "title", value: e.target.value })}
-          />
-        </Form.Group>
+    <div className="create-main-wrapper">
+      <p className="title">Create Your Blog</p>
 
-        <Form.Group className="mb-3">
-          <Form.Label>category</Form.Label>
-          <Form.Control
-            placeholder="Enter Topic"
-            onChange={(e) =>
-              dispatch({ type: "category", value: e.target.value })
-            }
-          />
-        </Form.Group>
+      <div className="input-field-wrapper">
+        <label>Title</label>
+        <input
+          placeholder="Enter Title"
+          onChange={(e) => dispatch({ type: "title", value: e.target.value })}
+        />
+      </div>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Description</Form.Label>
-          <Form.Control
-            as="textarea"
-            placeholder="Enter Description"
-            style={{ height: "100px" }}
-            onChange={(e) =>
-              dispatch({ type: "description", value: e.target.value })
-            }
-          />
-        </Form.Group>
+      <div className="input-field-wrapper">
+        <label>category</label>
+        <input
+          placeholder="Enter Topic"
+          onChange={(e) =>
+            dispatch({ type: "category", value: e.target.value })
+          }
+        />
+      </div>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Location</Form.Label>
-          <Form.Select
-            onChange={(e) =>
-              dispatch({ type: "location", value: e.target.value })
-            }
-            size="sm"
-          >
-            <option>India</option>
-            {countryData.map((item, index) => {
-              return (
-                <option style={{}} value={item.country} key={index}>
-                  {item.country}
-                </option>
-              );
-            })}
-          </Form.Select>
-        </Form.Group>
+      <div className="textarea-field-wrapper">
+        <label>Description</label>
+        <textarea
+          placeholder="Enter Description"
+          style={{ height: "100px" }}
+          onChange={(e) =>
+            dispatch({ type: "description", value: e.target.value })
+          }
+        />
+      </div>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Date</Form.Label>
-          <Form.Control value={new Date().toDateString()} disabled />
-        </Form.Group>
+      <div className="dropdown-wrapper">
+        <label>Location</label>
+        <select
+          onChange={(e) =>
+            dispatch({ type: "location", value: e.target.value })
+          }
+          size="sm"
+        >
+          <option>India</option>
+          {countryData.map((item, index) => {
+            return (
+              <option style={{}} value={item.country} key={index}>
+                {item.country}
+              </option>
+            );
+          })}
+        </select>
+      </div>
 
-        <Form.Group controlId="formFile" className="mb-3">
-          <Form.Label>Upload the image or video</Form.Label>
-          <Form.Control
-            type="file"
-            onChange={(e) =>
-              dispatch({ type: "file", value: e.target.files[0] })
-            }
-          />
-        </Form.Group>
+      <div className="input-field-wrapper">
+        <label>Date</label>
+        <input value={new Date().toDateString()} disabled />
+      </div>
 
+      <div className="file-input-wrapper">
+        <label>Upload the image or video</label>
+        <input
+          type="file"
+          onChange={(e) => dispatch({ type: "file", value: e.target.files[0] })}
+        />
+      </div>
+
+      <div className="button-container">
         <button onClick={(e) => postBlog(e)}>Create</button>
-      </Form>
-    </>
+      </div>
+    </div>
   );
 }
 

@@ -133,7 +133,7 @@ export default function EditBlogPage() {
         <label>Date</label>
         <input value={new Date().toDateString()} disabled />
       </div>
-      Existing media
+      Media
       <div className="edit-blog-mediacontainer">
         {editBlog.media && findMediaType(editBlog.media).includes("image") ? (
           <img src={editBlog.media} />

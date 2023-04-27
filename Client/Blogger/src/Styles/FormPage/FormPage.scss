@@ -1,0 +1,24 @@
+@import "../Constants/constants.scss";
+.form-page-wrapper {
+  width: 100%;
+  .tab-control-wrapper {
+    width: 100%;
+    display: flex;
+    // gap:2px;
+
+    button {
+      display: flex;
+      align-items: center;
+      padding: 1%;
+      border: none;
+      background-color: rgb(235, 235, 235);
+      color: rgb(69, 69, 69);
+      border-radius: 5px;
+    }
+  }
+  .tab-content-wrapper {
+    width: 100%;
+    border-top: 1px solid rgb(207, 207, 207);
+ 
+  }
+}
