@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 5%;
+  margin: 5% 0 2% 0;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   background-image: repeating-radial-gradient(circle at 0 0, transparent 0, rgba(247, 228, 228, 0.26) 14px), repeating-linear-gradient(rgba(255, 255, 254, 0.65), rgba(255, 255, 254, 0.65));
   background-color: rgba(247, 228, 228, 0.26);

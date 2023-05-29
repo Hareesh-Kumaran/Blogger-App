@@ -1,0 +1,87 @@
+.title {
+  margin: 3% 0;
+  text-align: center;
+  font-size: 2vw;
+  color: transparent;
+  background-image: linear-gradient(45deg, rgb(64, 183, 227), rgb(240, 126, 145), rgb(245, 245, 127));
+  -webkit-background-clip: text;
+}
+
+.media-list-wrapper {
+  background-color: red;
+  width: 100%;
+  padding: 5% 1%;
+  min-height: 40vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 75px;
+  justify-content: space-around;
+  background-image: radial-gradient(rgba(253, 206, 156, 0.36) 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  background-color: #ffffff;
+}
+.media-list-wrapper .card-wrapper {
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  max-height: 250px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  background-color: #ffffff;
+}
+.media-list-wrapper .card-wrapper .hover-container {
+  display: none;
+  position: absolute;
+  width: 350px;
+  height: 250px;
+  background-color: rgba(246, 171, 139, 0.575);
+}
+.media-list-wrapper .card-wrapper:hover {
+  cursor: pointer;
+  transition: 1s;
+  transform: translateY(-20px);
+}
+.media-list-wrapper .card-wrapper:hover img {
+  transition: 1s;
+  -o-object-position: 25% 50%;
+     object-position: 25% 50%;
+}
+.media-list-wrapper .card-wrapper:hover .hover-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 15px;
+}
+.media-list-wrapper .card-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0% 25%;
+     object-position: 0% 25%;
+  border-radius: 5px;
+}
+.media-list-wrapper .card-wrapper video {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  border-radius: 5px;
+}
+.media-list-wrapper .card-wrapper .card-body-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.media-list-wrapper .card-wrapper .card-body-wrapper .blog-title {
+  color: rgb(255, 167, 140);
+  font-size: 15px;
+}
+.media-list-wrapper .card-wrapper .card-body-wrapper .blog-description {
+  color: rgb(74, 74, 74);
+  font-size: 10px;
+}/*# sourceMappingURL=MediaPage.css.map */

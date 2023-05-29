@@ -60,9 +60,8 @@
   padding: 1%;
 }
 .login-form-main-wrapper .button-container button:hover {
-  color: rgb(247, 173, 37);
-  background-color: rgb(255, 255, 255);
-  background-image: none;
+  color: rgb(243, 241, 238);
+  background: #fa91a2;
   cursor: pointer;
-  transition: 2s;
+  transition: 0.5s ease-in-out;
 }/*# sourceMappingURL=LoginForm.css.map */

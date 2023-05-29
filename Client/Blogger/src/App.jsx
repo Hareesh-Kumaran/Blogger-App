@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "./Styles/app.css";
 import Footer from "./Components/Footer";
+import MediaPage from "./pages/Media";
 function App() {
   return (
     <Provider store={reduxStore}>
@@ -25,13 +26,14 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/auth" element={<FormPage />} />
+            <Route path="/media" element={<MediaPage />} />
             <Route path="/blog">
               <Route path="/blog/:id" element={<BlogPage />} />
               <Route path="/blog/create" element={<CreateBlog />} />
               <Route path="/blog/edit/:id" element={<EditBlogPage />} />
             </Route>
           </Routes>
-          <Footer/>
+          <Footer />
         </Container>
       </BrowserRouter>
     </Provider>

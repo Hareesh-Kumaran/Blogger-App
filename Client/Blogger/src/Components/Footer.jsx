@@ -4,9 +4,12 @@ export default function Footer() {
     <div className="footer" id="footer">
       <div className="contact-form-wrapper">
         <form>
-          <label>Feedback</label>
-          <textarea />
-          <button>Send</button>
+           <label>Feedback</label>
+           <textarea /> 
+
+           <button>
+            Send
+          </button> 
         </form>
       </div>
       <div className="social-media-container">

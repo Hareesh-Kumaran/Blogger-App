@@ -237,6 +237,16 @@
   .welcome-Banner-Wrapper {
     height: 30vh;
   }
+  .card-wrapper {
+    width: 200px;
+    min-height: 200px;
+  }
+  .card-wrapper .card-body-wrapper .blog-title {
+    font-size: 2.5vw;
+  }
+  .card-wrapper .card-body-wrapper .blog-description {
+    font-size: 1.5vw;
+  }
   .welcome-Banner-Message {
     font-size: 4vw;
   }

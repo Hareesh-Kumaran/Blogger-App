@@ -80,13 +80,7 @@ export default function BlogPage() {
           {mediaType.includes("image") ? (
             <img src={blog.media} className="media-style" />
           ) : (
-            <video
-              src={blog.media}
-              className="media-style"
-              autoPlay
-              muted
-              loop
-            />
+            <video src={blog.media} controls={true}/>
           )}
         </div>
         <div className="blog-page-right-wrapper">
@@ -122,7 +116,7 @@ export default function BlogPage() {
         className="modal-body-wrapper"
       >
         <Modal.Header className="modal-header" closeButton>
-          Sure !
+          Are you Sure ?
         </Modal.Header>
         <Modal.Body className="modal-content">
           Do you really want to delete this blog ?

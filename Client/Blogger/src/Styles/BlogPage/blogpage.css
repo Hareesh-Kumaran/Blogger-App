@@ -53,6 +53,9 @@
   -o-object-fit: contain;
      object-fit: contain;
 }
+.blog-page-left-wrapper video {
+  width: 95%;
+}
 @media (max-width: 900px) {
   .blog-page-left-wrapper {
     width: 100%;

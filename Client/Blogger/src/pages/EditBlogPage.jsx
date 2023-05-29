@@ -16,10 +16,10 @@ export default function EditBlogPage() {
   const [editBlog, setEditBlog] = useState({});
   const [countryData, setCountryData] = useState([]);
   const [cookie, setCookie] = useCookies(["Blogging_Token"]);
-  const [file, setFile] = useState(undefined); //having it as state coz the default value is S3 ref link not a file.
+  const [file, setFile] = useState(null);
+  
 
-  //having the separate state coz the initial value is editBlog state which is fetched by UE default {} is set as useReducer initial state after UE  editblog state is changed but the useReducer's initial value is changing.
-  //   const[title,setTitle]=useState(editBlog.title);
+
 
   
   function findMediaType(srcLink) {
@@ -78,6 +78,8 @@ export default function EditBlogPage() {
       navigate("/");
     }
   };
+
+  console.log('File upload',file);
   return (
     <div className="edit-main-wrapper">
       <h2 className="title">Edit Your Blog</h2>
@@ -135,11 +137,17 @@ export default function EditBlogPage() {
       </div>
       Media
       <div className="edit-blog-mediacontainer">
-        {editBlog.media && findMediaType(editBlog.media).includes("image") ? (
-          <img src={editBlog.media} />
+        {!file ? (
+          editBlog.media && findMediaType(editBlog.media).includes("image") ? (
+            <img src={editBlog.media} />
+          ) : (
+            <video src={editBlog.media} controls={true} />
+          )
+        ) : (file.type.includes("image") ? (
+          <img src={URL.createObjectURL(file)} />
         ) : (
-          <video src={editBlog.media} autoPlay muted loop />
-        )}
+          <video src={URL.createObjectURL(file)} controls={true} />
+        ))}
       </div>
       <div className="file-input-wrapper">
         <label>Upload the image or video</label>

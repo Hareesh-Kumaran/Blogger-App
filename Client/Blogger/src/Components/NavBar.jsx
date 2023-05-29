@@ -28,8 +28,6 @@ function NavigationBar() {
   };
 
   return (
-   
-
     <nav className="navigation-wrapper">
       <div className="logo-wrapper">
         <NavLink to={"/"} className="links">
@@ -45,13 +43,23 @@ function NavigationBar() {
         {/* <button>media</button> */}
 
         {cookie.Blogging_Token && (
-          <NavLink
-            className="links"
-            to={"/blog/create"}
-            onClick={() => setShowNav(false)}
-          >
-            Create Blog
-          </NavLink>
+          <>
+            <NavLink
+              className="links"
+              to={"/blog/create"}
+              onClick={() => setShowNav(false)}
+            >
+              Create Blog
+            </NavLink>
+
+            <NavLink
+              className="links"
+              to={"/media"}
+              onClick={() => setShowNav(false)}
+            >
+              Media
+            </NavLink>
+          </>
         )}
 
         <a href="#footer" className="links" onClick={() => setShowNav(false)}>

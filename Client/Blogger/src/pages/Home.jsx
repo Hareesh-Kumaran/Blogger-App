@@ -19,8 +19,6 @@ export default function HomePage() {
   //paginations
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(8);
-
-
   const lastIndex = currentPage * postPerPage;
   const firstIndex = lastIndex - postPerPage;
 
