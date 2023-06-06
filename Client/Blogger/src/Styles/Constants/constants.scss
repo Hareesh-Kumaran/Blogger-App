@@ -1,0 +1,48 @@
+@mixin primary-button() {
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(254, 159, 86);
+
+  &:hover {
+    color: rgb(254, 159, 86);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 1s;
+  }
+}
+
+@mixin secondary-button() {
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  // background-color: rgb(249, 224, 183);
+  background: #ff5f6d;
+  background: -webkit-linear-gradient(to right, #ffc371, #ff5f6d);
+  background: linear-gradient(to right, #ffc371, #ff5f6d);
+
+  &:hover {
+    color: rgb(243, 241, 238);
+    background: #fa91a2;
+
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+@mixin gradientText() {
+  color: transparent;
+  background-image: linear-gradient(
+    45deg,
+    rgb(64, 183, 227),
+    rgb(246, 57, 88),
+    rgb(245, 245, 127)
+  );
+  -webkit-background-clip: text;
+}

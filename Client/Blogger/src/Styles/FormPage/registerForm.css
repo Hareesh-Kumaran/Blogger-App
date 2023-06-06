@@ -1,0 +1,106 @@
+.register-form-main-wrapper {
+  width: 100%;
+}
+.register-form-main-wrapper .input-field-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 0;
+}
+.register-form-main-wrapper .input-field-wrapper label {
+  font-size: 1.25vw;
+}
+.register-form-main-wrapper .input-field-wrapper input {
+  font-size: 1vw;
+  color: rgb(65, 65, 65);
+  width: 100%;
+  height: 30px;
+  padding: 1.5% 1%;
+  border-radius: 10px;
+  border: 2px solid rgb(177, 177, 177);
+}
+.register-form-main-wrapper .input-field-wrapper input:hover {
+  border: 2px solid rgb(255, 225, 170);
+}
+@media (max-width: 800px) {
+  .register-form-main-wrapper .input-field-wrapper {
+    margin: 2% 0;
+  }
+  .register-form-main-wrapper .input-field-wrapper label {
+    font-size: 2vw;
+  }
+  .register-form-main-wrapper .input-field-wrapper input {
+    font-size: 1.5vw;
+  }
+}
+@media (max-width: 500px) {
+  .register-form-main-wrapper .input-field-wrapper {
+    margin: 2% 0;
+  }
+  .register-form-main-wrapper .input-field-wrapper label {
+    font-size: 3vw;
+  }
+  .register-form-main-wrapper .input-field-wrapper input {
+    font-size: 2.5vw;
+  }
+}
+.register-form-main-wrapper .dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 0;
+}
+.register-form-main-wrapper .dropdown-wrapper label {
+  font-size: 1.5vw;
+}
+.register-form-main-wrapper .dropdown-wrapper select {
+  font-size: 1vw;
+  color: rgb(65, 65, 65);
+  width: 100%;
+  padding: 0.5%;
+  border-radius: 10px;
+  border: 2px solid rgb(177, 177, 177);
+}
+.register-form-main-wrapper .dropdown-wrapper select:hover {
+  border: 2px solid rgb(255, 225, 170);
+}
+@media (max-width: 800px) {
+  .register-form-main-wrapper .dropdown-wrapper label {
+    font-size: 2vw;
+  }
+  .register-form-main-wrapper .dropdown-wrapper input {
+    font-size: 1.5vw;
+  }
+}
+@media (max-width: 500px) {
+  .register-form-main-wrapper .dropdown-wrapper {
+    margin: 2% 0;
+  }
+  .register-form-main-wrapper .dropdown-wrapper label {
+    font-size: 2.5vw;
+  }
+  .register-form-main-wrapper .dropdown-wrapper select,
+  .register-form-main-wrapper .dropdown-wrapper option {
+    font-size: 2vw;
+  }
+}
+.register-form-main-wrapper .button-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1% 0;
+}
+.register-form-main-wrapper .button-container button {
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background: #ff5f6d;
+  background: linear-gradient(to right, #ffc371, #ff5f6d);
+  padding: 1%;
+}
+.register-form-main-wrapper .button-container button:hover {
+  color: rgb(243, 241, 238);
+  background: #fa91a2;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}/*# sourceMappingURL=registerForm.css.map */

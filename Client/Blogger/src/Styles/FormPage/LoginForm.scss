@@ -1,0 +1,57 @@
+@import "../Constants/constants.scss";
+
+.login-form-main-wrapper {
+  width: 100%;
+
+  .input-field-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 1% 0;
+
+    label {
+      //   color: rgb(131, 131, 131);
+      font-size: 1.25vw;
+    }
+
+    input {
+      font-size: 1vw;
+      color: rgb(65, 65, 65);
+      width: 100%;
+      height: 30px;
+      padding: 1.5% 1%;
+      border-radius: 10px;
+      border: 2px solid rgb(177, 177, 177);
+      &:hover {
+        border: 2px solid rgb(255, 225, 170);
+      }
+    }
+    @media (max-width: 800px) {
+      margin: 2% 0;
+      label {
+        font-size: 2vw;
+      }
+      input {
+        font-size: 1.5vw;
+      }
+    }
+    @media (max-width: 500px) {
+      margin: 2% 0;
+      label {
+        font-size: 3vw;
+      }
+      input {
+        font-size: 2.5vw;
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1% 0;
+    button {
+      @include secondary-button;
+      padding: 1%;
+    }
+  }
+}
