@@ -5,24 +5,18 @@ import RegisterForm from "../Components/RegisterForm";
 
 function FormPage() {
   const [active, setactive] = useState(1);
-
-  const activeStyle = {
-    backgroundColor: " rgb(247, 186, 117)",
-    color: "white",
-    border: "0.5px solid  white",
-  };
   return (
     <div className="form-page-wrapper ">
       <div className="tab-control-wrapper">
         <button
           onClick={() => setactive(1)}
-          style={active === 1 ? activeStyle : {}}
+          className={active === 1 ? "active" : ""}
         >
           Login
         </button>
         <button
           onClick={() => setactive(2)}
-          style={active === 2 ? activeStyle : {}}
+          className={active === 2 ? "active" : ""}
         >
           Register
         </button>

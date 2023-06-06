@@ -10,15 +10,11 @@ export const BlogSlice = createSlice({
     searchValue: "",
   },
   reducers: {
-    fetchBlog: (state, action) => {
-      console.log("fetch blog called");
-    },
+    fetchBlog: (state, action) => {},
     addToBlogList: (state, action) => {
-      console.log("add to blogList", action.payload);
       state.blogList = [...action.payload];
     },
     setLocation: (state, action) => {
-      console.log("@setlocation action", action.payload);
       state.location = action.payload;
     },
     setSearchValue: (state, action) => {
@@ -37,6 +33,6 @@ export const {
   addToBlogList,
   setSearchValue,
   setSearchList,
-  updateBlog
+  updateBlog,
 } = BlogSlice.actions;
 export default BlogSlice.reducer;

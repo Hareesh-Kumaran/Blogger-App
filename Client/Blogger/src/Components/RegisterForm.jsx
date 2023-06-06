@@ -1,5 +1,4 @@
 import "../Styles/FormPage/registerForm.css";
-import { Form } from "react-bootstrap";
 import { useReducer, useEffect, useState } from "react";
 import axios from "axios";
 import { userEndPoint } from "../utils/ApiUrl";

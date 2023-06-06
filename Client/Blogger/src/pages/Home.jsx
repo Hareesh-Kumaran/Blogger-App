@@ -10,12 +10,12 @@ import CountryList from "../Components/DropDown";
 import "../Styles/HomePage/HomePage.css";
 import Pagination from "../Components/Pagination";
 
+
 export default function HomePage() {
   const [cookie, setCookie] = useCookies(["Blogging_Token"]);
   const { isLoggedIn } = useSelector((state) => state.user);
   const { blogList, searchList } = useSelector((state) => state.blog);
   const dispatch = useDispatch();
-
   //paginations
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(8);
@@ -24,7 +24,6 @@ export default function HomePage() {
 
   useEffect(() => {
     if (cookie.Blogging_Token && !isLoggedIn) {
-      console.log("@cookie", document.cookie[0]);
       const ID = localStorage.getItem("Blogging_UserID");
       dispatch(fetchuserDetails(ID));
     }
@@ -38,7 +37,6 @@ export default function HomePage() {
 
   const renderBlogCard = (list) => {
     const curentPostsList = list.slice(firstIndex, lastIndex);
-    console.log("renderCalled");
 
     return curentPostsList.map((blog) => (
       <BlogCard

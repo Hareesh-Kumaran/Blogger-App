@@ -8,25 +8,21 @@ export const userSlice = createSlice({
     isLoggedIn: false,
   },
   reducers: {
-    fetchuserDetails: (state, action) => {
-      console.log("@user reducer ,fetchuserDetails", action.payload);
-    },
+    fetchuserDetails: (state, action) => {},
 
     fetchUserSuccesful: (state, action) => {
       if (!action.payload) {
         return;
       }
-      console.log("@fetchUserSuccesful", action.payload);
+
       state.userDetails = action.payload;
       state.isLoggedIn = true;
     },
-    
+
     resetUserState: (state) => {
-      console.log("resetCalled");
       state.userDetails = {};
       state.isLoggedIn = false;
     },
-  
   },
 });
 

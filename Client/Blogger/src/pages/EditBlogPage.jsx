@@ -2,7 +2,6 @@ import "../Styles/EditPage/EditPage.css";
 import { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Form } from "react-bootstrap";
 import getCountrylist from "../utils/Country_data";
 import { useSelector } from "react-redux";
 import { useCookies } from "react-cookie";
@@ -18,12 +17,7 @@ export default function EditBlogPage() {
   const [cookie, setCookie] = useCookies(["Blogging_Token"]);
   const [file, setFile] = useState(null);
   
-
-
-
-  
   function findMediaType(srcLink) {
-    console.log((Mime.getType(srcLink)))
     return Mime.getType(srcLink);
   }
 
@@ -79,7 +73,6 @@ export default function EditBlogPage() {
     }
   };
 
-  console.log('File upload',file);
   return (
     <div className="edit-main-wrapper">
       <h2 className="title">Edit Your Blog</h2>

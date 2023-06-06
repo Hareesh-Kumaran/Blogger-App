@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Card, Button } from "react-bootstrap";
 import axios from "axios";
 import { userEndPoint } from "../utils/ApiUrl";
 import { useNavigate } from "react-router-dom";
+
+
 export default function BlogCard({ ID, src, title, date, mediaType, owner }) {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");

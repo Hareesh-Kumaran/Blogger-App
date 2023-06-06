@@ -1,11 +1,11 @@
 import "../Styles/Pagination/Pagination.css";
+
 export default function Paginations({
   totalPosts,
   postPerPage,
   setCurrentPage,
   currentPage
 }) {
-  console.log(totalPosts);
   let pagenumber = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postPerPage); i++) {

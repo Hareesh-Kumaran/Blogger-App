@@ -9,6 +9,7 @@ import { useEffect } from "react";
 function findMediaType(src) {
   return Mime.getType(src);
 }
+
 function MediaPage() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -19,7 +20,6 @@ function MediaPage() {
     <>
     <h1 className="title">Download our media.</h1>
       <div className="media-list-wrapper">
-        {console.log(blogList)}
         {blogList.map((blog) => (
           <MediaCard
             ID={blog._id}

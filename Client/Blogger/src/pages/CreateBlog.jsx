@@ -3,7 +3,6 @@ import { useState, useEffect, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useCookies } from "react-cookie";
-import { Form } from "react-bootstrap";
 import getCountrylist from "../utils/Country_data";
 import { toast } from "react-toastify";
 import axios from "axios";

@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import {useDispatch } from "react-redux";
 import { fetchuserDetails } from "../Redux/Feature/userSlice";
 
 function LoginForm() {
@@ -42,7 +42,6 @@ function LoginForm() {
     if (response.data.token) {
       setCookie("Blogging_Token", response.data.token);
       localStorage.setItem("Blogging_UserID", response.data.userID);
-      console.log(response.data.userID);
       let id = response.data.userID;
 
       dispatch(fetchuserDetails(id));

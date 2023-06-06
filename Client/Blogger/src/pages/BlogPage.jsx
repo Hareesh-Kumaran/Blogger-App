@@ -13,11 +13,9 @@ import { toast } from "react-toastify";
 export default function BlogPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const [deleteModal, setDeleteModal] = useState(false);
   const [cookie, setCookie] = useCookies(["Blogging_Token"]);
   const { userDetails, isLoggedIn } = useSelector((state) => state.user);
-  console.log("login", userDetails);
   const [blog, setBLog] = useState({});
   const [mediaType, setMediaType] = useState("");
   const [date, setDate] = useState("Not working");
@@ -32,7 +30,6 @@ export default function BlogPage() {
   };
 
   const dateFormatter = (data) => {
-    console.log("@dateFormatter", data);
     const date = new Date(data);
     return setDate(date.toDateString());
   };
@@ -50,7 +47,6 @@ export default function BlogPage() {
 
   useEffect(() => {
     if (cookie.Blogging_Token && isLoggedIn === false) {
-      console.log("fetching user");
       const ID = localStorage.getItem("Blogging_UserID");
       dispatch(fetchuserDetails(ID));
     }

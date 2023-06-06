@@ -7,18 +7,14 @@ import {
   setSearchList,
 } from "../Redux/Feature/BlogSlice";
 
-
 function* getBlogs() {
   const response = yield axios.get("http://localhost:7000/blog/");
-
-  console.log(response.data);
 
   yield put(addToBlogList(response.data));
 }
 
 function* getBlogsByLocation() {
   const { location } = yield select((state) => state.blog);
-  console.log("@saga", location);
 
   if (location === "none") {
     //if they want to select all the
@@ -30,11 +26,7 @@ function* getBlogsByLocation() {
     `http://localhost:7000/blog/location/${location}`
   );
 
-  console.log(response.data.blogList);
-
   if (response.data.isFound) {
-    console.log("@dbug");
-
     yield put(addToBlogList(response.data.blogList));
   } else {
     yield put(fetchBlog({}));
@@ -66,7 +58,6 @@ function* getFilteredBlogs() {
 
   yield put(setSearchList([...matchedResult]));
 }
-
 
 export default function* blogWatcherFunction() {
   yield takeLatest("blog/fetchBlog", getBlogs);
